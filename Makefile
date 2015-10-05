@@ -7,7 +7,7 @@
 
 # Once you have them, make sure gdal/apps and osmosis/bin are added to our path before running this file.
 COUNTRY=colombia
-DB=$(COUNTRY)_osm
+DB=loco
 
 colombia-latest.pbf:
 	curl -o $@ 'http://download.geofabrik.de/south-america/colombia-latest.osm.pbf'
