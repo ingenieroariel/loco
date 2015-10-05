@@ -136,13 +136,7 @@ train_stations.pbf: country-latest.pbf
 helipads.pbf: country-latest.pbf
 	osmosis --read-pbf-fast file="$<" --wkv keyValueList="aeroway.helipad" --used-node --write-pbf file="$@"
 
-ifeq ($(COUNTRY), dominica)
- SQL_EXPORTS = buildings.sql schools_point.sql schools_polygon.sql medical_point.sql medical_polygon.sql rivers.sql lakes.sql farms.sql forest.sql grassland.sql orchards.sql hamlets.sql villages.sql placenames.sql all_roads.sql main_roads.sql paths.sql tracks.sql aerodromes_point.sql aerodromes_polygon.sql banks.sql  hotels.sql police_stations.sql restaurants.sql bridges.sql
-endif
-
-ifeq ($(COUNTRY), nepal)
- SQL_EXPORTS = buildings.sql schools_point.sql schools_polygon.sql medical_point.sql medical_polygon.sql rivers.sql riverbanks.sql lakes.sql farms.sql forest.sql grassland.sql military.sql orchards.sql residential.sql village_green.sql cities.sql hamlets.sql neighborhoods.sql villages.sql placenames.sql all_roads.sql main_roads.sql paths.sql tracks.sql aerodromes_point.sql aerodromes_polygon.sql banks.sql  hotels.sql police_stations.sql restaurants.sql train_stations.sql idp_camps.sql helipads.sql
-endif
+SQL_EXPORTS = buildings.sql schools_point.sql schools_polygon.sql medical_point.sql medical_polygon.sql rivers.sql riverbanks.sql lakes.sql farms.sql forest.sql grassland.sql military.sql orchards.sql residential.sql village_green.sql cities.sql hamlets.sql neighborhoods.sql villages.sql placenames.sql all_roads.sql main_roads.sql paths.sql tracks.sql aerodromes_point.sql aerodromes_polygon.sql banks.sql  hotels.sql police_stations.sql restaurants.sql train_stations.sql idp_camps.sql helipads.sql
 
 EXPORTS = $(SQL_EXPORTS:.sql=)
 PBF_EXPORTS = $(SQL_EXPORTS:.sql=.pbf)
