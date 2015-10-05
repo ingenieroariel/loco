@@ -1,4 +1,4 @@
-LOcation COlombia
+loco: LOcation COlombia
 =================
 
 Teaching OSM and GeoDjango with local data.
