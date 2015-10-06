@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3q+dvm3!5-%gept)f89-w)3sp0(=6r3fvcy--==^*1&udwd8dg'
+SECRET_KEY = 'uitg_(yq(-!sh6n90c2i-pimi@&sw%=_rz)x4mnk--)o_(2f-^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,14 +31,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'django.contrib.gis',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.gis',
     'osm',
+    'djgeojson',
+    'leaflet',
     )
 
 MIDDLEWARE_CLASSES = (
@@ -79,7 +81,7 @@ WSGI_APPLICATION = 'loco.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.contrib.gis.db.backends.postgis',
-        'NAME': 'loco',
+        'NAME': 'loco2',
     }
 }
 
@@ -102,3 +104,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LEAFLET_CONFIG = {
+        'DEFAULT_CENTER': (11, -74.5),
+        'MIN_ZOOM': 5,
+        'MAX_ZOOM': 18,
+}
